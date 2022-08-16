@@ -4,7 +4,7 @@ form.addEventListener('submit', formSubmit);
 
 function formSubmit(event) {
   event.preventDefault();
-  for (let i = 1; i < form.amount.value; i++) {
+  for (let i = 1; i <= form.amount.value; i++) {
     createPromise(i, Number(form.delay.value) + Number(form.step.value) * i)
       .then(({ position, delay }) => {
         Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`);
